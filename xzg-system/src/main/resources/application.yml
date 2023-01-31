@@ -1,0 +1,31 @@
+server:
+  port: 9001
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: modules-service
+  profiles:
+    active: dev
+  # 邮件服务
+  mail:
+    default-encoding: UTF-8
+    host: smtp.qq.com
+    username: 1296750172@qq.com
+    password: rjsjkbtdybrlhjch
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+# 文件存储
+minio:
+  endpoint: http://182.254.147.195:9300
+  accessKey: iC5Qalb7wYvdNGfY
+  secretKey: KjNEvInrYChpoa9lQPf99oB5Mz3OhguM
+
+# 微信公众号配置
+
+

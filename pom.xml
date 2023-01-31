@@ -12,17 +12,34 @@
     <description>xzg-springboot-cli</description>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>xzg-common</module>
+        <module>xzg-system</module>
+    </modules>
+
     <properties>
         <java.version>11</java.version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <!--工具类-->
+
+
         <hutool.version>5.8.0.M3</hutool.version>
         <springboot.version>2.4.2</springboot.version>
         <springcloud.version>2020.0.1</springcloud.version>
         <springcloud.alibb.version>2021.1</springcloud.alibb.version>
+        <common.version>0.0.1-SNAPSHOT</common.version>
+        <lombok.version>1.18.24</lombok.version>
+        <mybatisplus.version>3.5.2</mybatisplus.version>
+        <mysql.connect.version>8.0.29</mysql.connect.version>
+        <druid.version>1.1.10</druid.version>
+        <wechatsdk.version>4.4.0</wechatsdk.version>
+        <mybatisplus.join.version>1.1.4</mybatisplus.join.version>
+        <p6spy.version>3.9.1</p6spy.version>
+        <commons.pool2.version>2.11.1</commons.pool2.version>
+        <minio.version>8.2.2</minio.version>
+        <velocity.version>2.2</velocity.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -56,20 +73,100 @@
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
+            <!--公共模块-->
+            <dependency>
+                <groupId>cn.happain</groupId>
+                <artifactId>xzg-common</artifactId>
+                <version>${common.version}</version>
+            </dependency>
+            <!--第三方存储-->
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
+            <!--lombok-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <!--mybatis plus-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatisplus.version}</version>
+            </dependency>
+            <!--mybatis 连接查询-->
+            <dependency>
+                <groupId>icu.mhb</groupId>
+                <artifactId>mybatis-plus-join</artifactId>
+                <version>${mybatisplus.join.version}</version>
+            </dependency>
+            <!--mysql连接驱动-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connect.version}</version>
+            </dependency>
+            <!--druid连接池-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <!--redis连接池-->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons.pool2.version}</version>
+            </dependency>
+            <!--微信订阅号服务号sdk-->
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-mp</artifactId>
+                <version>${wechatsdk.version}</version>
+            </dependency>
+            <!--微信开放平台-->
+           <!-- <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-open</artifactId>
+                <version>${wechatsdk.version}</version>
+            </dependency>
+            &lt;!&ndash;微信支付&ndash;&gt;
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-pay</artifactId>
+                <version>${wechatsdk.version}</version>
+            </dependency>-->
+            <!--微信小程序-->
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-miniapp</artifactId>
+                <version>${wechatsdk.version}</version>
+            </dependency>
+            <!--sql分析-->
+            <dependency>
+                <groupId>p6spy</groupId>
+                <artifactId>p6spy</artifactId>
+                <version>${p6spy.version}</version>
+            </dependency>
+            <!--代码生成器   -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatisplus.version}</version>
+            </dependency>
+            <!--Velocity模板引擎-->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity.version}</version>
+            </dependency>
+
 
 
         </dependencies>
     </dependencyManagement>
-
-
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
